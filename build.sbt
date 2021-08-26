@@ -10,8 +10,6 @@ crossPaths := false
 
 autoScalaLibrary := false
 
-//parallelExecution in Test := false
-
 libraryDependencies ++= Seq(
   "org.bouncycastle" % "bcprov-jdk15on" % "1.69",
   "com.novocode" % "junit-interface" % "0.11" % Test
