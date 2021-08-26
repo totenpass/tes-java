@@ -16,11 +16,9 @@ public class CLI {
             w.println("Enter the encrypted QRCode content:");
             content = c.readLine();
         }
-        byte[] ciphertextData = TESDecryptor.extractDataFromUrl(content);
         w.println("Enter your passphrase:");
         char[] passhphrase = c.readPassword();
-        byte[] plaintextData = TESDecryptor.decrypt(ciphertextData, passhphrase);
-        Plaintext plaintext = TESDecoder.decode(plaintextData);
+        Plaintext plaintext = TES.decryptAndDecode(content, passhphrase);
         if (plaintext.isText()) {
             System.out.println("Plaintext:");
             System.out.println(plaintext.getText());
